@@ -1,0 +1,23 @@
+{
+  "name": "sectionizr",
+  "version": "1.0.0",
+  "description": "jQuery plugin for presenting UI in sections, one section at a time, each section being full width and full height, arranged horizontally or vertically.",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/De-paule/sectionizr.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "sectionizr",
+    "devcrib",
+    "planet-nest"
+  ],
+  "author": "Banjo Mofesola Paul (mofesolapaul@planetnest.org)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/De-paule/sectionizr/issues"
+  },
+  "homepage": "https://github.com/De-paule/sectionizr#readme"
+}
