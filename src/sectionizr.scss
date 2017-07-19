@@ -1,0 +1,24 @@
+/*! @author | Banjo Mofesola Paul | Chief Developer, Planet NEST | mofesolapaul@planetnest.org | Wednesday, 19th July, 2017 */
+.sectionizr {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    section {
+        width: 100%;
+        height: 100%;
+        transition: margin 500ms ease-in-out;
+    }
+    &:not(.vertical) {
+        white-space: nowrap;
+        section {
+            display: inline-block;
+            vertical-align: top;
+            &:not(:first-of-type) {
+                margin-left: -4px; // remove inline-block default spacing
+            }
+        }
+    }
+}

@@ -2,7 +2,10 @@
   "name": "sectionizr",
   "version": "1.0.0",
   "description": "jQuery plugin for presenting UI in sections, one section at a time, each section being full width and full height, arranged horizontally or vertically.",
+  "main": "src/sectionizr.js",
   "scripts": {
+      "uglify": "uglifyjs src/sectionizr.js --mangle -o dist/sectionizr.min.js",
+      "scss": "sass --watch --style=compressed --sourcemap=none src:dist"
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/De-paule/sectionizr/issues"
   },
-  "homepage": "https://github.com/De-paule/sectionizr#readme"
+  "homepage": "https://github.com/De-paule/sectionizr#readme",
+  "dependencies": {}
 }
