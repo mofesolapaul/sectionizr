@@ -6,18 +6,18 @@
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
-    section {
+    > section {
         width: 100%;
         height: 100%;
         transition: margin 500ms ease-in-out;
     }
     &:not(.vertical) {
         white-space: nowrap;
-        section {
+        > section {
             display: inline-block;
             vertical-align: top;
             &:not(:first-of-type) {
-                margin-left: -4px; // remove inline-block default spacing
+                margin-left: -4px !important; // remove inline-block default spacing
             }
         }
     }

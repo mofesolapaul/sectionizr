@@ -1,0 +1,63 @@
+/*! @author | Banjo Mofesola Paul | Chief Developer, Planet NEST | mofesolapaul@planetnest.org | Wednesday, 19th July, 2017 */
+/* line 4, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+/* line 15, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr > section:nth-child(1) {
+  background: linear-gradient(to bottom right, #ffae1a 20%, orange 50%, #ffae1a); }
+
+/* line 15, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr > section:nth-child(2) {
+  background: linear-gradient(to bottom right, #f198f1 20%, violet 50%, #f198f1); }
+
+/* line 15, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr > section:nth-child(3) {
+  background: linear-gradient(to bottom right, #e1af33 20%, goldenrod 50%, #e1af33); }
+
+/* line 15, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr > section:nth-child(4) {
+  background: linear-gradient(to bottom right, #ff7961 20%, tomato 50%, #ff7961); }
+
+/* line 19, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr section {
+  font-size: 48px;
+  font-family: 'Bellefair', serif;
+  color: #fff;
+  text-align: center;
+  line-height: 100vh; }
+
+/* line 28, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr:not(.vertical) > .controls a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+  /* line 33, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+  .sectionizr:not(.vertical) > .controls a.prev {
+    left: 0; }
+  /* line 36, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+  .sectionizr:not(.vertical) > .controls a.next {
+    right: 0; }
+
+/* line 43, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.sectionizr.vertical > .controls {
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  width: 100%;
+  line-height: 0; }
+
+/* line 55, /Applications/MAMP/htdocs/Git Libraries/sectionizr/example/style.scss */
+.controls a {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: #fff; }
+
+/*# sourceMappingURL=style.css.map */

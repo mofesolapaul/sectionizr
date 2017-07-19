@@ -1,0 +1,61 @@
+/*! @author | Banjo Mofesola Paul | Chief Developer, Planet NEST | mofesolapaul@planetnest.org | Wednesday, 19th July, 2017 */
+
+$colors: orange violet goldenrod tomato;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.sectionizr {
+    @for $i from 1 through length($colors) {
+        >section:nth-child(#{$i}) {
+            background: linear-gradient(to bottom right, lighten(nth($colors, $i), 5%) 20%, nth($colors, $i) 50%, lighten(nth($colors, $i), 5%));
+        }
+    }
+    section {
+        font-size: 48px;
+        font-family: 'Bellefair', serif;
+        color: #fff;
+        text-align: center;
+        line-height: 100vh;
+    }
+    &:not(.vertical) {
+        >.controls {
+            a {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                &.prev {
+                    left: 0;
+                }
+                &.next {
+                    right: 0;
+                }
+            }
+        }
+    }
+    &.vertical {
+        >.controls {
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            width: 100%;
+            line-height: 0;
+            a {}
+        }
+    }
+}
+
+.controls {
+    a {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        background: #fff;
+    }
+}

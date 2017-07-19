@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sectionizr : sectionize your UI</title>
+    <link rel="stylesheet" href="dist/sectionizr.css">
+    <link rel="stylesheet" href="example/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sectionizr">
+        <div class="controls">
+            <a class="prev"></a>
+            <a class="next"></a>
+        </div>
+
+        <section>Sectionizr</section>
+        <section><span class="struck">sectionize</span> simplify your UI</section>
+        <section class="sectionizr vertical">
+            <section>Horizontally</section>
+            <section>Or</section>
+            <section>Vertically</section>
+            <section>S'il vous plait</section>
+
+            <div class="controls">
+                <a class="prev"></a>
+                <a class="next"></a>
+            </div>
+        </section>
+        <section>It's that simple!</section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="dist/sectionizr.min.js"></script>
+    <script>
+        // initialize sectionizr, keep a reference to the objects returned
+        let [controlla1, controlla2] = $('.sectionizr').sectionizr();
+
+    </script>
+</body>
+
+</html>
