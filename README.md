@@ -56,7 +56,7 @@ Now that you have your _controlla_, you can begin to control the `sectionized co
 
 #### Other stuff, cos I'm tired of writing already
 | Properties |
-| --- |
+| :--- |
 | **sectionizr.el**: returns the element this sectionizr is bound to in the DOM |
 | **sectionizr.sections**: returns an array of the DOM nodes (sections) contained in this sectionizr |
 | **sectionizr.position**: indicates what position (not zero-based) the section in view is at |
