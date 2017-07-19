@@ -1,6 +1,6 @@
 /*! @author | Banjo Mofesola Paul | Chief Developer, Planet NEST | mofesolapaul@planetnest.org | Wednesday, 19th July, 2017 */
 
-$colors: orange violet goldenrod tomato;
+$colors: orange violet goldenrod tomato olivedrab;
 html,
 body {
     height: 100%;
@@ -8,6 +8,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    overflow: hidden;
 }
 
 .sectionizr {
@@ -17,11 +18,15 @@ body {
         }
     }
     section {
-        font-size: 48px;
+        font-size: 68px;
         font-family: 'Bellefair', serif;
         color: #fff;
         text-align: center;
         line-height: 100vh;
+        transition: .5s ease-in-out;
+        @media(max-width: 760px) {
+            font-size: 200%;
+        }
     }
     &:not(.vertical) {
         >.controls {
@@ -30,11 +35,14 @@ body {
                 top: 0;
                 bottom: 0;
                 margin: auto;
+                &:before {
+                    transform: rotateZ(45deg)
+                }
                 &.prev {
-                    left: 0;
+                    left: 8px;
                 }
                 &.next {
-                    right: 0;
+                    right: 8px;
                 }
             }
         }
@@ -42,11 +50,19 @@ body {
     &.vertical {
         >.controls {
             position: absolute;
-            bottom: 5px;
+            bottom: 8px;
             text-align: center;
             width: 100%;
             line-height: 0;
-            a {}
+            a {
+                position: relative;
+                +a {
+                    margin-left: 5px;
+                }
+                &:before {
+                    transform: rotateZ(45deg)
+                }
+            }
         }
     }
 }
@@ -54,8 +70,25 @@ body {
 .controls {
     a {
         display: inline-block;
-        width: 42px;
-        height: 42px;
-        background: #fff;
+        width: 36px;
+        height: 36px;
+        box-sizing: border-box;
+        z-index: 1;
+        &:before {
+            box-sizing: border-box;
+            content: '';
+            border: solid thick #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+        }
     }
+}
+
+.struck {
+    font-style: italic;
+    text-decoration: overline;
 }
