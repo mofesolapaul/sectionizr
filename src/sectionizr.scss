@@ -10,6 +10,12 @@
         width: 100%;
         height: 100%;
         transition: margin 500ms ease-in-out;
+        &.snzr {
+            visibility: collapse;
+        }
+        &.snzr-visible {
+            visibility: visible;
+        }
     }
     &:not(.vertical) {
         white-space: nowrap;
