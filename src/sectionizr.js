@@ -102,6 +102,11 @@ $.fn.sectionize = $.fn.sectionizr = function () {
                 isVertical = $(snzr.el).hasClass('vertical')
                 snzr.sections.length = 0
                 $('>section', $(snzr.el)).each((i, s) => snzr.sections.push(s))
+                $(snzr.sections).css({
+                    marginLeft: 0,
+                    marginTop: 0
+                })
+                snzr.go(snzr.position)
             }
 
             // init
