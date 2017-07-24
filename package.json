@@ -5,7 +5,7 @@
   "main": "src/sectionizr.js",
   "scripts": {
       "uglify": "uglifyjs src/sectionizr.js --mangle -o dist/sectionizr.min.js",
-      "scss": "sass --watch --style=compressed --sourcemap=none example:example"
+      "scss": "sass --watch --style=compressed --sourcemap=none src:dist"
   },
   "repository": {
     "type": "git",
