@@ -2,6 +2,10 @@
  * Tool for controlling sectionizrs in the DOM
  */
 
+if (typeof module != 'undefined' && module.exports) {
+    var domtoimage = require('dom-to-image')
+    module.exports = {}
+}
 $.fn.sectionize = $.fn.sectionizr = function () {
     let guys = []
     $(this).each((i, el) => {
@@ -10,6 +14,7 @@ $.fn.sectionize = $.fn.sectionizr = function () {
             el
                 .sectionizr
                 .refresh()
+            guys.push(el.sectionizr)
             return
         }
         el.sectionizr = new(function () {
@@ -17,6 +22,7 @@ $.fn.sectionize = $.fn.sectionizr = function () {
 
             // private
             let isVertical = false
+            let isPeek = false
 
             // props
             snzr.el = el
@@ -62,12 +68,15 @@ $.fn.sectionize = $.fn.sectionizr = function () {
             }
             snzr.hasNext = () => snzr.position < snzr.sections.length
             snzr.hasPrev = () => snzr.position > 1
-            snzr.refresh = init
+            snzr.refresh = () => init(true)
+            snzr.orientation = () => isVertical ? 'vertical' : 'horizontal'
 
             // local
             function offset(forward = true) {
                 (forward === true ?
-                    snzr.position++ : (forward === false ?
+                    snzr.position++
+                    :
+                    (forward === false ?
                         snzr.position--
                         :
                         null))
@@ -83,12 +92,39 @@ $.fn.sectionize = $.fn.sectionizr = function () {
                     [_prop]: _offset
                 })
 
-                // manage visibility : collapsing out-of-view sections keeps them from being tabbed into
+                // manage visibility : collapsing out-of-view sections keeps them from being
+                // tabbed into
                 $('.snzr').removeClass('snzr')
                 $('.snzr-visible').removeClass('snzr-visible')
                 _delay(() => {
+                    if (isPeek) $('dom-image').remove()
                     $(snzr.sections[snzr.position - 1]).addClass('snzr-visible')
                     $(snzr.sections).addClass('snzr')
+                    if (isPeek) {
+                        let peeks = []
+                        snzr.position > 1 ? peeks.push(snzr.sections[snzr.position - 2]) : null
+                        snzr.position < snzr.sections.length ? peeks.push(snzr.sections[snzr.position]) : null
+                        $(peeks).each((i, e) => {
+                            $(e).removeClass('snzr')
+                            domtoimage.toPng(e, {
+                                quality: 0.1
+                            }).then(img => {
+                                $(e).addClass('snzr')
+                                $img = $('<dom-image></dom-image>')
+                                $img.css({
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                    top: '0',
+                                    left: '0',
+                                    opacity: '0.1',
+                                    backgroundImage: `url(${img})`,
+                                    backgroundRepeat: 'no-repeat',
+                                })
+                                $(e).append($img)
+                            })
+                        })
+                    }
                 }, 500)
 
                 return true
@@ -98,14 +134,16 @@ $.fn.sectionize = $.fn.sectionizr = function () {
                 setTimeout(cb, d)
             }
 
-            function init() {
-                isVertical = $(snzr.el).hasClass('vertical')
+            function init(refreshing = false) {
+                isVertical = $(snzr.el).hasClass('vertical') || $(snzr.el).is('[data-vertical]')
+                isPeek = typeof domtoimage != 'undefined' && $(snzr.el).is('[data-peek]')
                 snzr.sections.length = 0
                 $('>section', $(snzr.el)).each((i, s) => snzr.sections.push(s))
-                $(snzr.sections).css({
-                    marginLeft: 0,
-                    marginTop: 0
-                })
+                if (!refreshing)
+                    $(snzr.sections).css({
+                        marginLeft: 0,
+                        marginTop: 0
+                    })
                 snzr.go(snzr.position)
             }
 
@@ -118,5 +156,3 @@ $.fn.sectionize = $.fn.sectionizr = function () {
         guys[0] :
         guys
 }
-if (typeof module != 'undefined' && module.exports)
-    module.exports = {}

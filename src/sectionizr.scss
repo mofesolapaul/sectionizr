@@ -10,17 +10,19 @@
     >section {
         width: 100%;
         height: 100%;
-        &.snzr {
+        position: relative;
+        &.snzr>*:not(dom-image) {
             visibility: collapse;
         }
-        &.snzr-visible {
+        &.snzr-visible>*:not(dom-image) {
             visibility: visible;
         }
     }
-    &.vertical>section {
+    &.vertical>section,
+    &[data-vertical]>section {
         transition: margin-top 500ms ease-in-out;
     }
-    &:not(.vertical) {
+    &:not(.vertical):not([data-vertical]) {
         white-space: nowrap;
         >section {
             transition: margin-left 500ms ease-in-out;
