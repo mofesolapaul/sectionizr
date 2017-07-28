@@ -25,6 +25,7 @@
     &:not(.vertical):not([data-vertical]) {
         white-space: nowrap;
         >section {
+            white-space: normal;
             transition: margin-left 500ms ease-in-out;
             display: inline-block;
             vertical-align: top;

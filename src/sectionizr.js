@@ -117,7 +117,7 @@ $.fn.sectionize = $.fn.sectionizr = function () {
                                     height: '100%',
                                     top: '0',
                                     left: '0',
-                                    opacity: '0.1',
+                                    opacity: '0.3',
                                     backgroundImage: `url(${img})`,
                                     backgroundRepeat: 'no-repeat',
                                 })
