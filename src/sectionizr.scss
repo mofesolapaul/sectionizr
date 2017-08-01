@@ -11,8 +11,13 @@
         width: 100%;
         height: 100%;
         position: relative;
-        &.snzr>*:not(dom-image) {
-            visibility: collapse;
+        &.snzr {
+            &:not(.snzr-visible) {
+                overflow: hidden !important;
+            }
+            >*:not(dom-image) {
+                visibility: collapse;
+            }
         }
         &.snzr-visible>*:not(dom-image) {
             visibility: visible;
