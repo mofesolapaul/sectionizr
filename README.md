@@ -1,5 +1,5 @@
 # sectionizr
-jQuery plugin for presenting UI in sections, one section at a time, each section being full width and full height, arranged horizontally or vertically. [See example](https://de-paule.github.io/sectionizr/) to appreciate its simplicity and beauty.
+jQuery plugin for presenting UI in sections, one section at a time, each section being full width and full height, arranged horizontally or vertically. [See example](https://mofesolapaul.github.io/sectionizr/) to appreciate its simplicity and beauty.
 
 Sectionizr helps you present a rather bulky UI in a more friendly way, giving room for enough space for viewer comfort, and allowing them focus on what's important - overall, you can use sectionizr to break your UI into linked sections
 
@@ -61,4 +61,4 @@ Now that you have your _controlla_, you can begin to control the `sectionized co
 | **sectionizr.sections**: returns an array of the DOM nodes (sections) contained in this sectionizr |
 | **sectionizr.position**: indicates what position (not zero-based) the section in view is at |
 
-_with love from [@mpdepaule](https://twitter.com/mpdepaule)_
+_with love from [@mofesolapaul](https://about.me/mofesolapaul)_
